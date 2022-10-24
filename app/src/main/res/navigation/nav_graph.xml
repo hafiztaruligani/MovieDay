@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/moviesFragment">
+    <fragment
+        android:id="@+id/moviesFragment"
+        android:name="com.hafiztaruligani.movieday.presentation.movies.MoviesFragment"
+        android:label="fragment_movies"
+        tools:layout="@layout/fragment_movies" >
+        <action
+            android:id="@+id/action_moviesFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+        <action
+            android:id="@+id/action_moviesFragment_to_pagingMovieFragment"
+            app:destination="@id/pagingMovieFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.hafiztaruligani.movieday.presentation.detail.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" >
+        <argument android:name="movie_simple"
+            app:argType="com.hafiztaruligani.movieday.domain.model.MovieSimple" />
+        <argument
+            android:name="transition_name"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_detailFragment_to_userReviewsFragment"
+            app:destination="@id/userReviewsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pagingMovieFragment"
+        android:name="com.hafiztaruligani.movieday.presentation.pagingmovie.PagingMovieFragment"
+        android:label="fragment_paging_movie"
+        tools:layout="@layout/fragment_paging_movie" >
+        <argument
+            android:name="genre"
+            app:argType="com.hafiztaruligani.movieday.domain.model.Genre" />
+        <action
+            android:id="@+id/action_pagingMovieFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userReviewsFragment"
+        android:name="com.hafiztaruligani.movieday.presentation.userreviews.UserReviewsFragment"
+        android:label="fragment_user_reviews"
+        tools:layout="@layout/fragment_user_reviews" >
+        <argument
+            android:name="movie_simple"
+            app:argType="com.hafiztaruligani.movieday.domain.model.MovieSimple" />
+    </fragment>
+</navigation>

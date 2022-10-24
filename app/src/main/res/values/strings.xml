@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Movie Day</string>
+    <string name="title_activity_main">MainActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="see_all">See All</string>
+    <string name="user_reviews">User Reviews…</string>
+    <string name="retry">Retry?</string>
+    <string name="movies">Movies</string>
+    <string name="sorry_the_trailer_unavailable">Sorry, currently the trailer is unavailable</string>
+    <string name="no_user_reviews_yet">No user reviews yet</string>
+    <string name="network_is_unstable">Your network is unstable,</string>
+    <string name="end_of_data">End of data</string>
+    <string name="movie_day">MOVIE DAY</string>
+    <string name="image_view">image_view</string>
+
+</resources>
