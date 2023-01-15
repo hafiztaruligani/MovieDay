@@ -1,0 +1,136 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+
+
+    //Hilt
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+
+    //arg navigation
+    id 'androidx.navigation.safeargs.kotlin'
+
+    id("kotlin-parcelize")
+}
+
+tasks.withType(Test) {
+    useJUnitPlatform()
+}
+
+android {
+    compileSdk 32
+
+    defaultConfig {
+        applicationId "com.hafiztaruligani.movieday"
+        minSdk 22
+        targetSdk 32
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "SERVER_URL", '"https://api.themoviedb.org/3/"'
+            buildConfigField "String", "API_KEY", '"e0327de4a6aa72787567a7b0fdc533a5"'
+            buildConfigField "String", "IMAGE_URL", '"https://image.tmdb.org/t/p/w500"'
+            buildConfigField "String", "YOUTUBE_THUMBNAIL_URL", '"https://img.youtube.com/vi/KEY/0.jpg"'
+            buildConfigField "String", "YOUTUBE_API_KEY", '"AIzaSyDjyhoqxAwg5ASHKrnI4-9f__9iYqQHzpE"'
+        }
+        debug {
+            buildConfigField "String", "SERVER_URL", '"https://api.themoviedb.org/3/"'
+            buildConfigField "String", "API_KEY", '"e0327de4a6aa72787567a7b0fdc533a5"'
+            buildConfigField "String", "IMAGE_URL", '"https://image.tmdb.org/t/p/w500"'
+            buildConfigField "String", "YOUTUBE_THUMBNAIL_URL", '"https://img.youtube.com/vi/KEY/0.jpg"'
+            buildConfigField "String", "YOUTUBE_API_KEY", '"AIzaSyDjyhoqxAwg5ASHKrnI4-9f__9iYqQHzpE"'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    //binding
+    buildFeatures {
+        viewBinding true
+        dataBinding true
+    }
+
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.8.0'
+    implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation 'com.google.android.material:material:1.6.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.5.2'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.5.2'
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.4"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4"
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    // viewModels
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.6.0-alpha01'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.0-alpha01'
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.6.0-alpha01"
+    implementation "androidx.activity:activity-ktx:1.5.1"
+    implementation "androidx.fragment:fragment-ktx: 1.5.0-alpha03"
+
+    // testing
+    testImplementation("org.junit.jupiter:junit-jupiter:5.9.1")
+    testImplementation("org.mockito:mockito-junit-jupiter:4.8.1")
+
+    // hilt
+    implementation "com.google.dagger:hilt-android:2.42"
+    kapt "com.google.dagger:hilt-android-compiler:2.42"
+
+    // retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.okhttp3:okhttp:5.0.0-alpha.2'
+    implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.2'
+
+    // Glide
+    implementation 'com.github.bumptech.glide:glide:4.13.2'
+    kapt 'com.github.bumptech.glide:compiler:4.13.2'
+
+    // Room
+    def room_version = "2.4.3"
+
+    implementation("androidx.room:room-runtime:$room_version")
+    annotationProcessor("androidx.room:room-compiler:$room_version")
+    kapt("androidx.room:room-compiler:$room_version")
+    // Kotlin Extensions and Coroutines support for Room
+    implementation("androidx.room:room-ktx:$room_version")
+
+    // Room Paging 3 Integration
+    implementation("androidx.room:room-paging:$room_version")
+
+    // Room Test helpers
+    testImplementation("androidx.room:room-testing:$room_version")
+
+    // Paging
+    def paging_version = "3.1.1"
+    implementation("androidx.paging:paging-runtime:$paging_version")
+    testImplementation("androidx.paging:paging-common:$paging_version")
+
+    implementation("androidx.datastore:datastore-preferences:1.0.0")
+
+    // Youtube
+    implementation files('libs/YouTubeAndroidPlayerApi.jar')
+    implementation 'androidx.appcompat:appcompat:1.5.1'
+
+    //SplashScreen
+    implementation 'androidx.core:core-splashscreen:1.0.0'
+
+}

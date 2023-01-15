@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/secondary"
+    android:layout_marginVertical="8dp"
+    app:cardCornerRadius="10dp"
+    android:clickable="true"
+    android:focusable="true"
+    >
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/secondary"
+        >
+
+        <ImageView
+            android:id="@+id/poster"
+            android:layout_width="150dp"
+            android:layout_height="225dp"
+            app:layout_constraintStart_toStartOf="@+id/container"
+            app:layout_constraintTop_toTopOf="@+id/container"
+            android:contentDescription="@string/image_view"
+            />
+
+        <TextView
+            android:id="@+id/title"
+            style="@style/font_title"
+            android:textColor="@color/font_yellow"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:maxLines="2"
+            app:layout_constraintEnd_toEndOf="@+id/container"
+            app:layout_constraintStart_toEndOf="@+id/poster"
+            app:layout_constraintTop_toTopOf="@+id/poster" />
+
+        <ImageView
+            android:id="@+id/star"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintStart_toStartOf="@+id/title"
+            app:layout_constraintTop_toBottomOf="@+id/title"
+            app:srcCompat="@drawable/ic_star"
+            android:contentDescription="@string/image_view"
+            />
+
+        <TextView
+            android:id="@+id/vote_average"
+            style="@style/font_big"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/star"
+            app:layout_constraintStart_toEndOf="@+id/star"
+            app:layout_constraintTop_toTopOf="@+id/star"
+            android:layout_marginStart="4dp"
+            />
+        <TextView
+            android:id="@+id/year"
+            style="@style/font_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@+id/star"
+            app:layout_constraintTop_toBottomOf="@+id/star"
+            android:layout_marginTop="4dp"
+            />
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/genres"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/container"
+            app:layout_constraintStart_toStartOf="@+id/year"
+            app:layout_constraintTop_toBottomOf="@+id/year"
+            android:orientation="horizontal"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

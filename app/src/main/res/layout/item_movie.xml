@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="150dp"
+    android:layout_height="wrap_content"
+    android:background="@color/secondary"
+    android:paddingBottom="8dp"
+    android:layout_marginEnd="16dp"
+    app:cardCornerRadius="10dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/secondary"
+        android:paddingBottom="8dp"
+        >
+        <ImageView
+            android:id="@+id/poster"
+            android:layout_width="150dp"
+            android:layout_height="225dp"
+            android:background="@drawable/rounded_background"
+            app:layout_constraintEnd_toEndOf="@+id/container"
+            app:layout_constraintStart_toStartOf="@+id/container"
+            app:layout_constraintTop_toTopOf="@+id/container"
+            android:contentDescription="@string/image_view"
+            />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_marginStart="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/vote_average"
+            app:layout_constraintStart_toStartOf="@+id/container"
+            app:layout_constraintTop_toTopOf="@+id/vote_average"
+            app:srcCompat="@drawable/ic_star"
+            android:contentDescription="@string/image_view"
+            />
+
+        <TextView
+            android:id="@+id/vote_average"
+            style="@style/font_medium"
+            android:layout_marginTop="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/poster"
+            />
+
+        <TextView
+            android:id="@+id/title"
+            style="@style/font_medium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginTop="8dp"
+            android:maxLines="2"
+            android:minLines="2"
+            app:layout_constraintEnd_toEndOf="@+id/container"
+            app:layout_constraintStart_toStartOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/vote_average"
+            android:contentDescription="@string/image_view"
+            />
+
+        <TextView
+            android:id="@+id/year"
+            style="@style/font_small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@+id/title"
+            app:layout_constraintTop_toBottomOf="@+id/title"
+            android:layout_marginTop="4dp"
+            />
+
+        <TextView
+            android:id="@+id/genres"
+            style="@style/font_small"
+            android:textColor="@color/font_yellow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:maxLines="2"
+            android:minLines="2"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="@+id/container"
+            app:layout_constraintStart_toStartOf="@+id/year"
+            app:layout_constraintTop_toBottomOf="@+id/year"
+            />
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/see_all"
+            style="@style/font_title"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/rounded_background"
+            android:gravity="center_vertical"
+            android:paddingStart="20dp"
+            android:paddingEnd="0dp"
+            android:text="@string/see_all"
+            android:textColor="@color/font_yellow"
+            app:layout_constraintBottom_toBottomOf="@+id/container"
+            app:layout_constraintTop_toTopOf="@+id/container" />
+
+
+        <ImageView
+            android:id="@+id/arrow"
+            android:visibility="gone"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:layout_constraintBottom_toBottomOf="@id/see_all"
+            app:layout_constraintTop_toTopOf="@id/see_all"
+            app:layout_constraintEnd_toEndOf="@+id/container"
+            app:srcCompat="@drawable/right_arrow"
+            android:contentDescription="@string/image_view"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
